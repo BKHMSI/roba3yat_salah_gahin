@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html ng-app="Roba3yat">
+<head>
+    <title>رباعيات</title>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <!-- AngularJS -->
+    <script type="text/javascript" charset="utf8" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <!-- App -->
+    <script type="text/javascript" charset="utf8" src="app.js"></script>
+
+    <style>
+
+    .container-1{
+        width: 300px;
+        height: auto;
+        margin: 0 auto;
+        display:inline-block;
+        padding: 5px;
+        left:23%;
+        position: relative;
+    }   
+
+    .container-1 input#search{
+        width: 300px;
+        height: 50px;
+        background: #2b303b;
+        border-style: solid;
+        border-width:thin;
+        border-color: black;
+        font-size: 10pt;
+        float: left;
+        color: #63717f;
+        padding-left: 45px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-transition: .55s ease;
+        -moz-transition: .55s ease;
+        -ms-transition: .55s ease;
+        -o-transition: .55s ease;
+        transition: .55s ease;
+    }
+
+    .container-1 input#search::-webkit-input-placeholder {
+        color: #65737e;
+    }
+
+    .container-1 input#search:-ms-input-placeholder {
+        color: #65737e;
+    }
+
+    .container-1 .icon{
+        position: absolute;
+        margin-left: 17px;
+        margin-top: 14px;
+        z-index: 1;
+        color: #4f5b66;
+    }
+
+    .container-1 input#search:hover, .container-1 input#search:focus, .container-1 input#search:active{
+        outline:none;
+        background: #ffffff;
+    }
+
+    </style>
+</head>
+
+<body ng-controller="Controller">
+    <nav class="navbar navbar-inverse" role="navigation" style="background-color:black;border:0px;border-radius:0px;">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-success navbar-btn" ng-click="change()" style="width:150px;padding:5px;font-size:1.5em;">
+                        <span class="glyphicon glyphicon-random"></span> &nbsp;&nbsp; التالي
+                    </button>
+                </div>
+            </div>
+            <div class="container-1">
+                <span class="icon"><i class="fa fa-search"></i></span>
+                <input type="search" ng-model="search" id="search" placeholder="Search..." ng-change="find()"/>
+            </div>
+            <div class="navbar-header navbar-right">
+                <a class="navbar-brand" style="color:#FFFFFF;font-size:1.5em">رباعيات صلاح جاهين</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div style="height:100%; font-size:4em; text-align:center;">
+            <div ng-repeat="p in poem track by $index">{{p}}<hr ng-hide="$index == 4"></div>
+        </div>
+        <hr style="margin-top:10px;margin-bottom:10px;"/>
+        <p><small> &copy; Badr AlKhamissi</small></p>
+    </div>
+</body>
+</html>
